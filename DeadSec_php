@@ -1,0 +1,48 @@
+<?php
+
+// show me ... my location  like (pwd)
+
+
+$pwd = getcwd();
+echo $pwd;
+
+echo "<br>"."<br>";
+
+//  Go to css folder   ... like( cd css )
+
+
+$you_path = chdir(css);
+
+$iam_here = getcwd();  // test this 
+echo  $iam_here;
+
+echo "<br>"."<br>";
+
+
+// hash !!
+
+// can open and read the file 
+
+//$file = fopen("d1.css","r") or die ("104 not found !");
+
+//echo $file;
+
+
+// open and Read file and Convert all the scriptes to sha crypatge ! 
+
+$file = fopen("d1.css","r") or die ("104 not found !");
+
+while(!feof($file)){    //read line by line 
+  $xv= fgets($file)."<br>";
+  echo hash_file('sha1',"d1.css");  
+//echo sha1($xv);
+
+
+
+
+
+}
+fclose($file);
+
+
+?>
